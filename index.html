@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Landing Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fafafa;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 50px;
+            background-color: transparent;
+            transition: background-color 0.5s ease, padding 0.5s ease, box-shadow 0.5s ease;
+            z-index: 1000;
+        }
+
+        nav.scrolled {
+            background-color: #1a252f;
+            padding: 15px 50px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1a252f;
+            transition: color 0.5s ease;
+        }
+
+        nav.scrolled .logo {
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 16px;
+            color: #1a252f;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: color 0.4s ease, background-color 0.4s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+
+        nav.scrolled .nav-links a {
+            color: #cccccc;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+            background-color: #1a252f;
+            transform: translateY(-2px);
+        }
+
+        nav.scrolled .nav-links a:hover {
+            color: #1a252f;
+            background-color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 100px 50px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        section h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #1a252f;
+        }
+
+        section p {
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="logo">Logo</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" style="background: #f4f6f9;">
+        <h1>Home Section</h1>
+        <p>This is the home page content.</p>
+    </section>
+
+    <section id="about" style="background: #e9ecef;">
+        <h1>About Section</h1>
+        <p>This is the about page content.</p>
+    </section>
+
+    <section id="services" style="background: #dee2e6;">
+        <h1>Services Section</h1>
+        <p>This is the services page content.</p>
+    </section>
+
+    <section id="contact" style="background: #ced4da;">
+        <h1>Contact Section</h1>
+        <p>This is the contact page content.</p>
+    </section>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 40) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
